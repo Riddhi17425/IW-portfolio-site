@@ -1,0 +1,237 @@
+/* Responsive Design for IW-Portfolio */
+
+/* ==========================================================================
+   Ultra Large Screens (< 1600px)
+   ========================================================================== */
+@media (max-width: 1600px) {
+    .hero h1 {
+        font-size: 130px;
+        /* Scale down so it doesn't get hidden behind 3D model */
+    }
+
+    .container {
+        max-width: 1350px;
+    }
+
+    .project-details-section,
+    .golden-harbour-section {
+        padding: 80px 0;
+    }
+
+    .brand-text-header h2 {
+        font-size: 74px;
+    }
+
+    .brand-text-header {
+        margin-bottom: 44px;
+    }
+
+    .mt_100 {
+        margin-top: 80px;
+    }
+}
+
+/* ==========================================================================
+   Extra Large Screens (< 1400px)
+   ========================================================================== */
+@media (max-width: 1441px) {
+    .hero h1 {
+        font-size: 115px;
+    }
+
+    .hero p {
+        font-size: 22px;
+    }
+
+    .brand-text-header h2 {
+        font-size: 75px;
+    }
+
+    .container {
+        max-width: 1270px;
+    }
+
+    .project-details-section,
+    .golden-harbour-section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        font-size: 32px;
+        margin: 0 0 20px 0;
+    }
+
+    .mt_100 {
+        margin-top: 60px;
+    }
+}
+
+/* ==========================================================================
+   Desktop / Laptop (< 1200px)
+   ========================================================================== */
+@media (max-width: 1281px) {
+    .hero h1 {
+        font-size: 100px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .brand-text-header h2 {
+        font-size: 64px;
+    }
+
+    .section-heading {
+        font-size: 34px;
+    }
+
+    .container {
+        max-width: 1180px;
+    }
+}
+
+/* ==========================================================================
+   Tablet (< 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Layout Adjustments */
+    .top-row,
+    .bottom-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .overview-col,
+    .industry-col,
+    .challenges-col,
+    .approach-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .brand-text-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .brand-text-header h2,
+    .brand-text-header p {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Hero Section Stacking (Option A) */
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        /* height: auto; */
+        padding-top: 36px;
+    }
+
+    .hero-bg-line {
+        top: 200px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    #canvas-container {
+        position: relative;
+        /* Stack it below text */
+        width: 100vw;
+        height: 50vh;
+        right: auto;
+        left: 0;
+    }
+
+    /* Spacing Adjustments */
+    .mt_100 {
+        margin-top: 60px;
+    }
+}
+
+/* ==========================================================================
+   Large Mobile (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Typography Scaling */
+    .hero h1 {
+        font-size: 70px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .brand-text-header h2 {
+        font-size: 50px;
+    }
+
+    .section-heading {
+        font-size: 28px;
+    }
+
+    /* Spacing */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Zoom Hint adjustment */
+    #zoom-hint {
+        bottom: 20px;
+        padding: 8px 16px;
+        font-size: 11px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Small Mobile (< 576px)
+   ========================================================================== */
+@media (max-width: 576px) {
+    /* Typography Scaling */
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .brand-text-header h2 {
+        font-size: 36px;
+    }
+
+    .section-heading {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    /* Spacing Adjustments */
+    .mt_100 {
+        margin-top: 40px;
+    }
+
+    .services-tags .tag {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .project-details-section p,
+    .project-details-section li {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .project-details-section h3 {
+        margin: 0 0 8px 0;
+    }
+}

@@ -1,0 +1,138 @@
+.contact_hero {
+    margin-top: 65px;
+    margin-bottom: 85px;
+    text-align: center;
+}
+
+.contact_hero .title_72 {
+    font-weight: 300;
+    color: var(--666-grey);
+}
+
+
+.grey_btn {
+    background: #EEEEEE;
+    padding: 12px 24px;
+    border-radius: 53px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #444444;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.met_ind_right_btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.met_ind_right .title_36 {
+    color: #282663;
+}
+
+.met_ind_left .title_36 {
+    color: #666666;
+}
+
+.met_ind_text {
+    margin-bottom: 0;
+}
+
+/* ravi css start contact page */
+
+.contact .row .col-12 {
+    margin-bottom: 60px;
+
+}
+
+.inputs_field {
+    border-bottom: 1px solid var(--ddd-grey);
+    padding-bottom: 5px;
+}
+
+
+.inputs_field input {
+    color: var(--999-grey);
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    border: none;
+}
+
+.inputs_field input:focus {
+    border: none;
+    outline: none;
+}
+
+.inputs_field .sub_head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--999-grey);
+    margin-top: 50px;
+}
+
+.contact .head_btn {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.contact .head_btn:hover {
+    color: var(--white);
+    transform: translateY(0px);
+    border: 1px solid var(--282-blue);
+}
+
+
+.contact .head_btn::before {
+    background: transparent;
+}
+
+.contact .title_24 {
+    color: var(--282-blue);
+    margin-bottom: 20px;
+}
+
+/* Arrow icon interaction: animate when the input is focused (or when label clicked) */
+.inputs_field .title_24 img {
+    display: inline-block;
+    width: 18px;
+    height: auto;
+    margin-right: 8px;
+    transition: transform .22s cubic-bezier(.2, .8, .2, 1), filter .18s ease, opacity .18s ease;
+    opacity: .9;
+}
+
+/* Slight movement on hover of the label */
+.inputs_field .title_24:hover img {
+    transform: translateX(4px) rotate(3deg);
+}
+
+/* When input inside the field is focused, animate the arrow */
+.inputs_field:focus-within .title_24 img {
+    transform: translateX(8px) rotate(6deg);
+    filter: brightness(1.05) saturate(1.02);
+    opacity: 1;
+}
+
+/* Make the arrow focusable (for keyboard users) */
+.inputs_field .title_24 img:focus {
+    outline: 3px solid var(--282-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* Small active press feedback when label or arrow clicked */
+.inputs_field .title_24:active img,
+.inputs_field .title_24 img:active {
+    transform: translateX(3px) scale(.98);
+}

@@ -1,0 +1,605 @@
+@media (min-width: 1900px) {
+    .container {
+        max-width: 1800px;
+    }
+}
+
+@media (max-width: 1707px) {
+
+    .innter_hero_bot {
+        margin: 50px 0;
+    }
+
+    /* .products_ft {
+        padding: 60px 30px;
+    } */
+
+    .logo_favicon_ft {
+        padding: 25px 40px 25px 0;
+    }
+
+    .contact_btn_ft {
+        padding: 30px 0px 35px 40px;
+    }
+}
+
+@media (max-width: 1601px) {
+
+    header {
+        padding-top: 30px;
+    }
+
+    .logo img {
+        width: 250px;
+    }
+
+    .title_90 {
+        font-size: 72px;
+        line-height: 82px;
+    }
+
+    .hero_para {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .hero {
+        margin-top: 90px;
+    }
+
+    .filter .filter_top {
+        margin: 70px 0;
+    }
+
+    .home_card_main {
+        gap: 50px;
+    }
+
+    .footer_wrapper_top {
+        margin-top: 100px;
+    }
+
+    .innter_hero_bot .title_30 {
+        font-size: 24px;
+        line-height: 38px;
+    }
+
+    .title_72 {
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    .project_details_link a {
+        font-size: 60px;
+        line-height: 64px;
+
+    }
+
+    .logo_favicon_ft img {
+        width: 80px;
+    }
+
+    .products_ft {
+        padding: 30px 32px;
+    }
+
+    .copy_ft {
+        padding: 0 30px;
+    }
+
+    .contact_btn_ft {
+        padding: 20px 0px 20px 20px;
+    }
+
+    .logo_favicon_ft {
+        padding: 25px 20px 25px 0;
+    }
+}
+
+@media (max-width: 1441px) {
+
+    .title_90 {
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    .hero_para {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .filter .filter_top {
+        margin: 60px 0;
+    }
+
+    .select-pill {
+        padding: 15px 20px;
+        width: 330px;
+    }
+
+    .home_card .content_card {
+        margin-top: 25px;
+    }
+
+    .home_card .content_card .title_24 {
+        margin-bottom: 15px;
+    }
+
+    .btn_card {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 20px;
+        top: 24px;
+        left: 24px;
+    }
+
+
+    .logo img {
+        width: 240px;
+    }
+
+    .select-pill .select-label {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .select-pill .chev {
+        width: 13px;
+    }
+
+    .home_card_main {
+        gap: 40px;
+    }
+
+    .footer_wrapper_top {
+        margin-top: 80px;
+    }
+
+    .footer_wrapper_top {
+        margin-top: 80px;
+        background: var(--282-blue);
+        padding: 60px 150px;
+    }
+
+    .title_40 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .line_ft {
+        margin: 20px 0;
+    }
+
+    .title_24 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .title_72 {
+        font-size: 54px;
+    }
+
+    .innter_hero_bot {
+        margin: 35px 0;
+    }
+
+    .innter_hero_bot .title_30 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .innter_hero_bot_rt {
+        row-gap: 30px;
+    }
+
+    .innter_hero_bot_rt .child .para {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .innter_hero_link li {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .innter_hero {
+        margin-top: 100px;
+    }
+
+    .logo_favicon_ft img {
+        width: 60px;
+    }
+
+    .copy_ft {
+        padding: 0 15px;
+    }
+
+    .contact_btn_ft p {
+        line-height: 22px;
+    }
+
+    .contact_hero {
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+
+    /* .products_ft img {
+        width: 100px;
+    } */
+
+    /* .products_ft {
+        padding: 32px 20px;
+    } */
+
+    .container {
+        max-width: calc(100% - 30px);
+    }
+
+    .copy_ft {
+        text-wrap: wrap;
+        text-align: center;
+    }
+
+    .products_ft {
+        padding: 21px 9px;
+    }
+
+    .products_ft img {
+        width: 110px;
+    }
+}
+
+@media (max-width: 1281px) {
+
+    .title_90 {
+        font-size: 56px;
+        line-height: 60px;
+    }
+
+    .hero_para {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .filter .filter_top {
+        margin: 50px 0;
+    }
+
+    .select-pill {
+        padding: 14px 20px;
+        width: 300px;
+    }
+
+    .head_btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .head_btn svg {
+        width: 15px;
+    }
+
+    /*.select-options li {*/
+    /*    padding: 8px 16px;*/
+    /*}*/
+    
+    .select-options li label
+{
+     padding: 8px 16px;
+    
+}
+
+    .logo img {
+        width: 230px;
+    }
+
+    .footer_wrapper_top .title_24 {
+        font-size: 20px;
+    }
+
+    .con_ft ul {
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .title_40 {
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .line_ft {
+        margin: 20px 0;
+    }
+
+    .footer_wrapper_top {
+        padding: 50px 150px;
+    }
+
+    .project_details_link a {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .project_details_link svg {
+        width: 60px;
+    }
+
+    .project_details_link {
+        margin-top: 30px;
+        text-align: end;
+    }
+
+    .innter_hero_bot .title_30 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .innter_hero_bot_rt .child .para {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .innter_hero {
+        margin-top: 90px;
+    }
+
+    .con_ft ul {
+        font-size: 14px;
+        line-height: 24px;
+
+    }
+
+    .contact .row .col-12 {
+        margin-bottom: 50px;
+    }
+
+    .contact .title_24 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .grey_btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .inputs_field input {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .copy_ft {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+        .logo img {
+        width: 215px;
+    }
+    
+    .hero {
+        margin-top: 65px;
+    }
+    
+        .filter .filter_top {
+        margin: 40px 0;
+    }
+    
+    .select-group {
+ 
+    gap: 20px;
+   
+     }
+     
+    /*     .select-pill {*/
+    /*    padding: 12px 20px;*/
+        
+    /*}*/
+    
+    .footer_wrapper_top {
+        margin-top: 40px;
+    }
+    
+        .home_card .content_card {
+        margin-top: 20px;
+    }
+    
+        .home_card_main {
+        gap: 30px;
+    }
+    
+        .btn_card {
+       
+        top: 16px;
+        left: 16px;
+    }
+    
+    .footer_wrapper_top {
+        padding: 25px;
+    }
+    
+        .title_40 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .footer_wrapper_top .title_24 {
+        font-size: 18px;
+        line-height: 36px;
+    }
+    
+        header {
+        padding-top: 25px;
+    }
+    
+    .header_wrapper {
+   
+    flex-direction: column;
+    gap: 20px;
+   
+}
+
+      .title_90 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+        .container {
+        max-width: calc(100% - 5px);
+    }
+    
+    header {
+  
+    position: static;
+  }
+  
+  .title_30
+
+ {
+    font-size: 26px;
+    line-height: 28px;
+}
+  
+
+.footer_wrapper_bot
+{
+     flex-direction: column;
+             padding: 25px 0;
+}
+
+.logo_favicon_ft,.products_ft,.products_ft a
+{
+    border:none;
+}
+
+.logo_favicon_ft,.products_ft,.products_ft a,.contact_btn_ft,.copy_ft 
+{
+    padding:0;
+}
+
+    .title_72 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+        .innter_hero {
+        margin-top: 65px;
+    }
+    
+          .innter_hero_bot_rt {
+            row-gap: 25px;
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: 25px;
+    }
+    
+        .innter_hero_bot {
+        margin: 30px 0;
+    }
+    
+        .project_details_link a {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    
+    .project_details_link a span:last-child svg {
+   
+    width: 45px;
+}
+
+    .contact_hero {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+        .contact .row .col-12 {
+        margin-bottom: 35px;
+    }
+    
+    .contact .title_24 {
+   
+    margin-bottom: 10px;
+}
+
+.form-control {
+   
+    padding: 8px 0 !important;
+   
+}
+     
+     
+}
+
+@media (max-width: 480px) {
+        .logo img {
+        width: 200px;
+    }
+    
+    .home_card_main {
+    
+    grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .select-pill {
+      
+        width: 100%;
+         z-index: unset;
+    }
+    
+        .footer_wrapper_top {
+                padding: 25px 16px;
+    }
+    
+    .title_40 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .con_ft {
+    display: grid;
+
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer_wrapper_bot_lt {
+   
+    gap: 20px;
+           margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.footer_wrapper_bot_rt {
+   
+    flex-direction: column;
+            gap: 20px;
+   
+}
+
+.products_ft
+{
+    display: contents;
+    
+}
+
+.products_ft p
+{
+    margin-bottom:0;
+}
+
+.innter_hero_link
+{
+   flex-wrap: wrap;
+}
+    
+  
+}

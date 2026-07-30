@@ -1,0 +1,124 @@
+  @media screen and (max-width:1800px){
+     .container-fluid {max-width: 1560px;}
+    .banner_img_1 {width: 170px;}
+        .banner_img_2 {width: 210px;}
+         .banner_img_3 {width: 240px;}
+        .banner_img_4 {width: 160px;}
+        .header_title{font-size: 38px;}
+     }
+     @media screen and (max-width:1600px){
+    .container-fluid {max-width: 1460px;}
+     }
+     @media screen and (max-width:1441px){
+      body{font-size: 14px !important;}
+        .header_title{font-size: 35px;}
+           .container-fluid {max-width: 1300px;}
+           .container{max-width: 1130px !important;}
+             .mean_head{    font-size: 50px;line-height: 54px;}
+        /*     .banner_img_1 {width: 150px; margin-top: 60px;}*/
+        /*.banner_img_2 {width: 230px;}*/
+        /* .banner_img_3 {width: 180px;}*/
+        /*.banner_img_4 {width: 130px; margin-top: 60px;}*/
+        .card_overlay{padding: 26px;}
+        .f_48{    font-size: 42px;line-height: 46px;}
+        .map_img{width: 70%;}
+        .map-circle{    width: 180px; height: 180px;padding: 20px;    margin-left: 5%;}
+        .map-circle-location {align-items: flex-end;}
+        .map-location-text {font-size: 18px; line-height: 27px;
+}
+     } 
+         @media screen and (max-width:1280px){
+          .header_title{font-size: 30px;}
+        .container-fluid {max-width: 1150px;}
+        body{font-size: 14px !important;}
+        .section_mt { margin-top: 50px;}
+        .section_pt{padding-top: 50px;}
+        .mean_head{    font-size: 46px;line-height: 50px;}
+        .glimpse_section .mean_head{font-size: 50px;line-height: 50px;}
+        .product_card_title{    font-size: 20px;}
+        .banner_img_1 {width: 140px; }
+        .banner_img_2 {width: 180px;}
+         .banner_img_3 {width: 210px;}
+        .banner_img_4 {width: 125px; }
+        .product_item_details{padding: 12px; padding-top: 0;}
+        .card_overlay{ padding: 10px;}
+        .trendsetters_title{    font-size: 28px; }
+        .goal_crad h2{font-size: 22px;}
+         .goal_crad_head ,.goal_crad_text{padding: 14px 24px;}
+         .f_48{    font-size: 38px;line-height: 42px;}
+     } 
+     @media screen and (max-width:1120px){} 
+     @media screen and (max-width:992px){
+         .swiper-wrapper{padding-bottom:30px;}
+    .product_item_details {
+              padding-top: 20px;
+    opacity: 1;
+    visibility: visible;
+    border: none !important;
+    transform:none;
+    position: relative;
+     }
+   }
+    @media screen and (min-width:992px){
+      .product_wrapper:hover .product_card {
+          border-radius: 10px 10px 0px 0px;
+          margin: -1px;
+          border-left: 1px solid #000;
+          border-right: 1px solid #000;
+          border-top: 1px solid #000;
+          /* border: 1.112px solid #4A4A4A; */
+          background: #FFF;
+          position: relative;
+          z-index: 2;
+      }
+
+      .product_wrapper:hover .product_item_details {
+          transform: translate(0, 0%);
+          opacity: 1;
+          visibility: visible;
+      }
+      .product_wrapper:hover .product_card_slider {
+          transform: scale(0.85);
+          position: relative;
+      }
+
+      .product_wrapper:hover .slick-arrow {
+          opacity: 1;
+      }
+   }
+     @media screen and (max-width:768px){
+         .product_card_slider img {
+    width: 100% !important;
+    display: block;
+}
+
+         /*.product_img {width:320px; height:320px;}*/
+      .product_wrapper .slider_arrows .slick-next {right: 3%;left: auto;}
+      .product_wrapper .slider_arrows .slick-prev{left: 3%;right: auto;}
+      .slider_arrows .slick-prev::before, .slider_arrows .slick-next::before{width: 19px;    height: 13px;background-position: center;}
+      .product_wrapper .slick-arrow {opacity: 1;              border-radius: 50%;   background-color: white;}
+      .navbar-flex{display: flex; flex-direction: column;align-items: center;}
+          .heder_section {padding-top: 10px;padding-bottom: 20px;}
+      .header_title {font-size: 30px; margin-top: 10px;}
+      .glimpse_section{    margin-bottom: 10px;}
+      .why_choose_wrapper{position: relative;transform: translateY(0);}
+      .why_choose{    padding: 16px;background-color:transparent;}
+      .mt-100{    margin-top: -5%;}
+          .trendsetters_title { font-size: 22px;}
+          .card_overlay { padding: 26px;}
+      .navbar-brand{width: 100px;}
+      .ft_logo{    width: 265px;}
+      .footer_section {padding-bottom: 30px;}
+      .section_pt { padding-top: 30px;}
+      .map_section_right , .map_section_left , .map_section_top{position: relative;}
+      .mean_head ,     .glimpse_section .mean_head{
+        font-size: 32px;
+        line-height: 40px;
+    }
+     }
+   @media (max-width: 1920px) and (min-width: 1700px)  {
+      .container {
+      max-width: 1460px !important;
+}
+
+  }

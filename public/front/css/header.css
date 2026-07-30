@@ -1,0 +1,97 @@
+/* header */
+header {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background-color: var(--white);
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /*width: 280px;*/
+}
+
+/* From Uiverse.io by barisdogansutcu */
+
+.head_btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    border-radius: 40px;
+    background: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color .3s ease, transform .3s ease;
+}
+
+/* hover background layer */
+.head_btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--282-blue);
+    transform: translateY(110%);
+    transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+    z-index: 0;
+}
+
+/* hover state */
+.head_btn:hover {
+    color: var(--white);
+    transform: translateY(-2px);
+    border: 1px solid var(--282-blue);
+}
+
+.head_btn:hover::before {
+    transform: translateY(0);
+}
+
+/* text move */
+.head_btn:hover .btn-text {
+    transform: translateX(6px);
+}
+
+/* icon move */
+.head_btn:hover .btn-icon {
+    transform: translateX(10px) rotate(10deg);
+}
+
+/* icon color */
+.head_btn svg path {
+    stroke: currentColor;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--282-blue);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
