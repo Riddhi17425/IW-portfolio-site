@@ -1,6 +1,6 @@
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('frontend/project-detail/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/project-detail/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/project-detail/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/project-detail/css/responsive.css') }}">
     <script type="importmap">
         {
             "imports": {
@@ -19,27 +19,31 @@
 
     <div class="container" style="position: relative; z-index: 2;">
         <div class="hero-content">
-            <h1>BUILDING A<br>GLOBAL DIGITAL<br>IDENTITY FOR</h1>
-            <p>AN INDUSTRIAL ENGINEERING LEADER</p>
+            <h1>{!! nl2br(e($project->hero_heading)) !!}</h1>
+            <p>{!! strip_tags($project->hero_description) !!}</p>
         </div>
     </div>
 
-    <div id="canvas-container" class="threejs-model-container"
-         data-model="{{ asset('frontend/project-detail/assets/models/DOUBLE-GIMBAL-ASSEM.glb') }}">
-        <div id="zoom-hint" style="display: none;">
-            <svg class="mouse-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" stroke-width="2"/>
-                <circle class="scroll-wheel" cx="12" cy="9" r="2" fill="currentColor"/>
-            </svg>
-            <span class="hint-text">Click to Zoom</span>
+    @if($project->hero_model)
+        <div id="canvas-container" class="threejs-model-container"
+             data-model="{{ asset('public/newportfolio/hero_models/' . $project->hero_model) }}">
+            <div id="zoom-hint" style="display: none;">
+                <svg class="mouse-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" stroke-width="2"/>
+                    <circle class="scroll-wheel" cx="12" cy="9" r="2" fill="currentColor"/>
+                </svg>
+                <span class="hint-text">Click to Zoom</span>
+            </div>
         </div>
-    </div>
+    @endif
 </section>
 
 {{-- ================= FULL WIDTH BANNER ================= --}}
+@if($project->banner_image)
 <section class="full-width-banner">
-    <img src="{{ asset('frontend/project-detail/assets/images/Web-Banner.jpg') }}" alt="Full Width Banner">
+    <img src="{{ asset('public/newportfolio/banners/' . $project->banner_image) }}" alt="{{ $project->name }}">
 </section>
+@endif
 
 {{-- ================= OVERVIEW / INDUSTRY / SERVICES / CHALLENGES-APPROACH ================= --}}
 <section class="project-details-section">
@@ -47,117 +51,109 @@
         <div class="details-row top-row">
             <div class="overview-col">
                 <h3>OVERVIEW</h3>
-                <p>Flexibel is a UAE-based manufacturer specializing in high-performance metallic expansion joints, rubber expansion joints, fabric expansion joints, metal hoses, and engineered piping solutions. Serving industries such as power, oil & gas, marine, HVAC, cement, and process industries, the company delivers customized solutions.</p>
+                <p>{!! $project->overview_description !!}</p>
             </div>
+            @if($industryNames->count())
             <div class="industry-col">
                 <h3>INDUSTRY</h3>
-                <p>Manufacturing &<br>Industrial Engineering</p>
+                <p>{!! $industryNames->implode('<br>') !!}</p>
             </div>
+            @endif
         </div>
 
+        @if($servicesList && count($servicesList))
         <div class="details-row services-row">
             <h3>SERVICES</h3>
             <div class="services-tags">
-                <span class="tag">Branding & Visual Identity</span>
-                <span class="tag">Graphic Design & Marketing Collaterals</span>
-                <span class="tag">Social Media Management</span>
-                <span class="tag">Website Design & Development</span>
-                <span class="tag">3D Product Texturing & Rendering</span>
-                <span class="tag">Lead Generation Strategy</span>
-                <span class="tag">SEO & Organic Visibility</span>
-                <span class="tag">Exhibition & Expo Support</span>
+                @foreach($servicesList as $service)
+                    <span class="tag">{{ $service }}</span>
+                @endforeach
             </div>
         </div>
+        @endif
 
         <div class="details-row bottom-row">
+            @if($project->challenge_description)
             <div class="challenges-col">
                 <h3>CHALLENGES</h3>
-                <ul>
-                    <li>Complex industrial products required a simplified yet technically accurate presentation.</li>
-                    <li>Existing digital assets failed to communicate the brand's engineering expertise effectively.</li>
-                    <li>Previous website attempts lacked scalability, user experience, and search visibility.</li>
-                    <li>Limited visual content made it difficult to showcase highly technical products digitally.</li>
-                    <li>Needed a unified brand identity across online and offline marketing platforms.</li>
-                </ul>
+                {!! $project->challenge_description !!}
             </div>
+            @endif
+            @if($project->approach_description)
             <div class="approach-col">
                 <h3>APPROACH</h3>
-                <ul>
-                    <li>Built a modern, technically structured website focused on user experience and product discoverability.</li>
-                    <li>Developed a consistent brand language across digital, print, and social media platforms.</li>
-                    <li>Created high-quality 3D product renders to communicate complex engineering solutions visually.</li>
-                    <li>Designed marketing collaterals that balanced technical specifications with clean, engaging design.</li>
-                    <li>Implemented an SEO-focused website architecture to strengthen organic visibility and global reach.</li>
-                </ul>
+                {!! $project->approach_description !!}
             </div>
+            @endif
         </div>
     </div>
 </section>
 
-{{-- ================= BRAND EXPERIENCE GRID ================= --}}
+{{-- ================= GALLERY ================= --}}
+@if($project->gallery_heading || $project->gallery_description || $galleryGroups->count())
 <section class="golden-harbour-section">
     <div class="container">
+        @if($project->gallery_heading || $project->gallery_description)
         <div class="brand-text-header">
-            <h2>Creating a Consistent<br>Brand Experience</h2>
-            <p>A cohesive visual identity was developed across print, digital, and corporate communication, ensuring every customer interaction reinforced the brand's technical expertise and professionalism.</p>
+            @if($project->gallery_heading)<h2>{!! nl2br(e($project->gallery_heading)) !!}</h2>@endif
+            @if($project->gallery_description){!! $project->gallery_description !!}@endif
         </div>
-        <img src="{{ asset('frontend/project-detail/assets/images/image 136eradf.png') }}" alt="Brand Experience Grid" class="brand-grid-image">
+        @endif
+
+        {{-- First gallery group: shown with no title, images only, matching "Brand Experience Grid" style --}}
+        @if($galleryGroups->count() > 0)
+            @php $firstGroup = $galleryGroups[0]; @endphp
+            @foreach($firstGroup as $item)
+                @if(in_array($item->media_type, ['image', 'gif']))
+                    <img src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" alt="{{ $project->name }}" class="brand-grid-image">
+                @elseif($item->media_type === 'video')
+                    <video src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" class="brand-grid-image" controls></video>
+                @endif
+            @endforeach
+        @endif
     </div>
 </section>
+@endif
 
-{{-- ================= PRODUCT SERIES 01 (3D models grid) ================= --}}
-<section class="products-showcase-section mt_100">
-    <div class="container">
-        <h2 class="section-heading">PRODUCT SERIES 01</h2>
+{{-- ================= REMAINING GALLERY GROUPS (2nd onward) ================= --}}
+@if($galleryGroups->count() > 1)
+    @foreach($galleryGroups->slice(1) as $group)
+        @php
+            $groupTitle = $group->first()->title;
+            $has3dModel = $group->contains(fn($item) => in_array($item->media_type, ['glb', 'gltf']));
+        @endphp
 
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="threejs-model-container" data-model="{{ asset('frontend/project-detail/assets/models/DOUBLE-GIMBAL-ASSEM.glb') }}"></div>
+        <section class="products-showcase-section mt_100">
+            <div class="container">
+                @if($groupTitle)
+                    <h2 class="section-heading">{{ $groupTitle }}</h2>
+                @endif
+
+                @if($has3dModel)
+                    {{-- 3D model group: render each model in its own viewer, grid style like Product Series 01 --}}
+                    <div class="products-grid">
+                        @foreach($group as $item)
+                            @if(in_array($item->media_type, ['glb', 'gltf']))
+                                <div class="product-card">
+                                    <div class="threejs-model-container" data-model="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}"></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                @else
+                    {{-- Image/video group: full-width showcase image(s), same style as Product Series 02-05 --}}
+                    @foreach($group as $item)
+                        @if(in_array($item->media_type, ['image', 'gif']))
+                            <img src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" alt="{{ $groupTitle ?? $project->name }}" class="products-showcase-image">
+                        @elseif($item->media_type === 'video')
+                            <video src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" class="products-showcase-image" controls></video>
+                        @endif
+                    @endforeach
+                @endif
             </div>
-            <div class="product-card">
-                <div class="threejs-model-container" data-model="{{ asset('frontend/project-detail/assets/models/DOUBLE-HINGED.glb') }}"></div>
-            </div>
-            <div class="product-card">
-                <div class="threejs-model-container" data-model="{{ asset('frontend/project-detail/assets/models/DOUBLE-MITER-RECTANGULAR-EXPANSION-JOINT.glb') }}"></div>
-            </div>
-            <div class="product-card">
-                <div class="threejs-model-container" data-model="{{ asset('frontend/project-detail/assets/models/EXTERNALLLY-PRESSURIZED.glb') }}"></div>
-            </div>
-            <div class="product-card">
-                <div class="threejs-model-container" data-model="{{ asset('frontend/project-detail/assets/models/PANTOGRAPGHIC-EXPANSION-JOINT.glb') }}"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ================= PRODUCT SERIES 02-05 ================= --}}
-<section class="products-showcase-section mt_100">
-    <div class="container">
-        <h2 class="section-heading">Product Series 02</h2>
-        <img src="{{ asset('frontend/project-detail/assets/images/image 132.png') }}" alt="Expansion Joints Showcase 2" class="products-showcase-image">
-    </div>
-</section>
-
-<section class="products-showcase-section mt_100">
-    <div class="container">
-        <h2 class="section-heading">Product Series 03</h2>
-        <img src="{{ asset('frontend/project-detail/assets/images/image 133.png') }}" alt="Expansion Joints Showcase 3" class="products-showcase-image">
-    </div>
-</section>
-
-<section class="products-showcase-section mt_100">
-    <div class="container">
-        <h2 class="section-heading">Product Series 04</h2>
-        <img src="{{ asset('frontend/project-detail/assets/images/image 134.png') }}" alt="Expansion Joints Showcase 4" class="products-showcase-image">
-    </div>
-</section>
-
-<section class="products-showcase-section mt_100">
-    <div class="container">
-        <h2 class="section-heading">Product Series 05</h2>
-        <img src="{{ asset('frontend/project-detail/assets/images/image 135.png') }}" alt="Expansion Joints Showcase 5" class="products-showcase-image">
-    </div>
-</section>
+        </section>
+    @endforeach
+@endif
 
 {{-- ================= LOADING / ERROR OVERLAYS ================= --}}
 <div id="loading-screen">
@@ -166,7 +162,7 @@
 <div id="error-message">Failed to load the 3D model. Please check the file path.</div>
 
 @push('scripts')
-    <script type="module" src="{{ asset('frontend/project-detail/js/script.js') }}"></script>
+    <script type="module" src="{{ asset('public/frontend/project-detail/js/script.js') }}"></script>
 @endpush
 
 @include('layouts.frontfooter')

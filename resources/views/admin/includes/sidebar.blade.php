@@ -22,15 +22,15 @@
 
             <!-- Product Management -->
             <li class="collapsed{{ Request::routeIs('category.*') || Request::routeIs('product.*') ||
-            Request::routeIs('industry.*') || Request::routeIs('tabing.*') || Request::routeIs('clothsize.*') || Request::routeIs('clothcolor.*') ? ' active' : '' }}">
+            Request::routeIs('industry.*') || Request::routeIs('tabing.*') || Request::routeIs('clothsize.*') || Request::routeIs('clothcolor.*') || Request::routeIs('portfolio.*') ? ' active' : '' }}">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-product-management"
                  href="#">
-                    <i class="icofont-box fs-5"></i> 
+                    <i class="icofont-box fs-5"></i>
                     <span>Project Management</span>
                     <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span>
                 </a>
-                <ul class="sub-menu collapse{{ Request::routeIs('category.*') ||Request::routeIs('product.*') || Request::routeIs('industry.*') || Request::routeIs('tabing.*') || Request::routeIs('brand.*') || Request::routeIs('clothsize.*') || Request::routeIs('clothcolor.*') ? ' show' : '' }}" id="menu-product-management">
-                    
+                <ul class="sub-menu collapse{{ Request::routeIs('category.*') ||Request::routeIs('product.*') || Request::routeIs('industry.*') || Request::routeIs('tabing.*') || Request::routeIs('brand.*') || Request::routeIs('clothsize.*') || Request::routeIs('clothcolor.*') || Request::routeIs('portfolio.*') ? ' show' : '' }}" id="menu-product-management">
+
                     <!-- Category -->
                     <li>
                         <a class="m-link{{ Request::routeIs('category.index') ? ' active' : '' }}" href="{{ route('category.index') }}">
@@ -40,12 +40,12 @@
                     </li>
 
                     <!-- Product -->
-                    <li>
+                    <!-- <li>
                         <a class="m-link{{ Request::routeIs('product.index') ? ' active' : '' }}" href="{{ route('product.index') }}">
                            <i class="icofont-box fs-5"></i>
                            <span>Project</span>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- Brand -->
                     <li>
                         <a class="m-link{{ Request::routeIs('industry.index') ? ' active' : '' }}" href="{{ route('industry.index') }}">
@@ -61,7 +61,14 @@
                         </a>
                     </li>
 
-                    
+                    <!-- Portfolio -->
+                    <li>
+                        <a class="m-link{{ Request::routeIs('portfolio.*') ? ' active' : '' }}" href="{{ route('portfolio.index') }}">
+                           <i class="icofont-layout fs-5"></i>
+                           <span>Projects</span>
+                        </a>
+                    </li>
+
                 </ul>
             </li>
 
