@@ -23,7 +23,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Banner</th>
+                        <th>Listing Image</th>
                         <th>Name</th>
                         <th>URL</th>
                         <th>Status</th>
@@ -36,9 +36,9 @@
                         <tr>
                             <td>{{ $loop->iteration + ($projects->currentPage() - 1) * $projects->perPage() }}</td>
                             <td>
-                                @if($project->banner_image)
-                                    <img src="{{ asset('public/newportfolio/banners/'.$project->banner_image) }}"
-                                         style="width:60px;height:40px;object-fit:cover;border-radius:4px;">
+                                @if($project->listing_image)
+                                    <img src="{{ asset('public/newportfolio/listing/'.$project->listing_image) }}"
+                                        style="width:60px;height:40px;object-fit:cover;border-radius:4px;">
                                 @else
                                     <span class="text-muted">—</span>
                                 @endif

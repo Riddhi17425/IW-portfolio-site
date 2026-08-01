@@ -107,9 +107,11 @@
               @foreach($projects as $project)
                <div class="home_card"
                   data-industries="{{ $project->industry_ids }}">
-                  <div class="home_card_img">
+                 <div class="home_card_img">
                      <a href="{{ route('projectdetail', $project->url) }}">
-                     <img class="w-100" src="{{ asset('public/newportfolio/banners/' . $project->banner_image) }}" alt="{{ $project->name }}">
+                     <img class="w-100"
+                        src="{{ asset('public/newportfolio/' . ($project->listing_image ? 'listing/' . $project->listing_image : 'banners/' . $project->banner_image)) }}"
+                        alt="{{ $project->name }}">
                      </a>
                   </div>
                   <div class="content_card">

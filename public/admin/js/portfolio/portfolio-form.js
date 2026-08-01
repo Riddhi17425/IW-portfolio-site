@@ -86,6 +86,15 @@ $(document).ready(function () {
         $("#bannerImagePreviewWrap").show();
     });
 
+    /* ---------- Listing image preview ---------- */
+    $("#listingImageInput").on("change", function () {
+        const file = this.files[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        $("#listingImagePreview").attr("src", url);
+        $("#listingImagePreviewWrap").show();
+    });
+
     /* ---------- Media repeater ---------- */
     let mediaIndex = $("#media-rows .media-row").length;
 

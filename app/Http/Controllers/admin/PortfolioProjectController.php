@@ -38,6 +38,7 @@ class PortfolioProjectController extends Controller
                 },
             ],
             'banner_image'   => 'nullable|image|max:5120',
+            'listing_image'  => 'nullable|image|max:5120',
             'media.*.type'   => 'nullable|string',
             'media.*.file.*' => 'nullable|file|max:20480',
         ]);
@@ -51,6 +52,10 @@ class PortfolioProjectController extends Controller
 
         if ($request->hasFile('banner_image')) {
             $post->banner_image = $this->uploadFile($request->file('banner_image'), 'newportfolio/banners');
+        }
+
+        if ($request->hasFile('listing_image')) {
+            $post->listing_image = $this->uploadFile($request->file('listing_image'), 'newportfolio/listing');
         }
 
         $post->save();
@@ -87,6 +92,7 @@ class PortfolioProjectController extends Controller
                 },
             ],
             'banner_image'   => 'nullable|image|max:5120',
+            'listing_image'  => 'nullable|image|max:5120',
             'media.*.type'   => 'nullable|string',
             'media.*.file.*' => 'nullable|file|max:20480',
         ]);
@@ -99,6 +105,10 @@ class PortfolioProjectController extends Controller
 
         if ($request->hasFile('banner_image')) {
             $post->banner_image = $this->uploadFile($request->file('banner_image'), 'newportfolio/banners');
+        }
+
+        if ($request->hasFile('listing_image')) {
+            $post->listing_image = $this->uploadFile($request->file('listing_image'), 'newportfolio/listing');
         }
 
         $post->save();

@@ -74,6 +74,16 @@
                     </div>
                 </div>
 
+                <div class="col-md-6">
+                <label class="form-label">Listing Image</label>
+                <input type="file" id="listingImageInput" name="listing_image" class="form-control dropify" accept="image/*">
+                @error('listing_image') <span class="text-danger">{{ $message }}</span> @enderror
+
+                <div id="listingImagePreviewWrap" class="mt-2" style="display:none;">
+                    <img id="listingImagePreview" src="" style="max-height:140px;border-radius:8px;border:1px solid #e2e2e2;">
+                </div>
+            </div>
+
                     {{-- Overview --}}
                     <div class="col-md-12">
                         <label class="form-label">Overview Description</label>
