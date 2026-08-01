@@ -101,7 +101,14 @@ function initModelViewer(container) {
 
             // Calculate a scale factor to ensure the model is adequately large
             const maxDim = Math.max(size.x, size.y, size.z);
-            const targetSize = 2.5; // Slightly increased size as requested
+            
+            // Check if it's a product model and if we are on mobile
+            const isProduct = container.closest('.new-product-card') !== null;
+            const isMobile = window.innerWidth <= 768;
+            
+            // Use a larger target size for product models on mobile so they don't look too small
+            const targetSize = (isProduct && isMobile) ? 3.5 : 2.5;
+
             if (maxDim > 0) {
                 const scale = targetSize / maxDim;
                 model.scale.set(scale, scale, scale);
@@ -114,12 +121,21 @@ function initModelViewer(container) {
             // Adjust the model's position to center it at the origin (0,0,0)
             model.position.sub(center);
 
-            // Remove any built-in shadows/black spots from the model's materials (like Ambient Occlusion)
+            // Remove any built-in shadows/black spots from the model's materials
             model.traverse((child) => {
                 if (child.isMesh && child.material) {
-                    child.material.aoMap = null; // Remove dark baked crevices
+                    child.material.aoMap = null; 
                     child.material.aoMapIntensity = 0;
-                    child.material.envMapIntensity = 2.0; // Boost brightness of reflections
+                    child.material.envMapIntensity = 2.0; 
+                    
+                    // Enable anisotropic filtering to prevent blurry textures when scaled up
+                    if (child.material.map) {
+                        child.material.map.anisotropy = renderer.capabilities.getMaxAnisotropy();
+                    }
+                    if (child.material.normalMap) {
+                        child.material.normalMap.anisotropy = renderer.capabilities.getMaxAnisotropy();
+                    }
+                    
                     child.material.needsUpdate = true;
                 }
             });
@@ -148,14 +164,17 @@ function initModelViewer(container) {
         },
     );
 
-    // 7. Handle Window Resize
-    window.addEventListener("resize", () => {
-        if (!container.clientWidth) return;
+    // 7. Handle Container Resize perfectly to avoid blurry stretching
+    const resizeObserver = new ResizeObserver(() => {
+        if (!container.clientWidth || !container.clientHeight) return;
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
+        // Ensure pixel ratio is always optimal
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
         controls.handleResize(); // Required for TrackballControls
     });
+    resizeObserver.observe(container);
 
     // 8. Start the Animation Loop
     function animate() {
@@ -176,7 +195,7 @@ function initModelViewer(container) {
 // --- Bootstrap the Application ---
 // Find all elements meant to contain 3D models and initialize them dynamically.
 function initAllViewers() {
-    const containers = document.querySelectorAll(".threejs-model-container");
+    const containers = document.querySelectorAll(".new-threejs-model-container");
     containers.forEach((container) => {
         initModelViewer(container);
     });

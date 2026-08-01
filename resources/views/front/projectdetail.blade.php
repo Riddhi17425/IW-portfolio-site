@@ -14,25 +14,26 @@
 @include('layouts.frontheader')
 
 {{-- ================= HERO ================= --}}
-<section class="hero">
-    <div class="hero-bg-line"></div>
+<section class="new-hero">
+    <div class="new-hero-bg-line"></div>
 
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="hero-content">
+    <div class="new-container" style="position: relative; z-index: 2;">
+        <div class="new-hero-content">
             <h1>{!! nl2br(e($project->hero_heading)) !!}</h1>
             <p>{!! strip_tags($project->hero_description) !!}</p>
         </div>
     </div>
 
     @if($project->hero_model)
-        <div id="canvas-container" class="threejs-model-container"
+        <div id="canvas-container" class="new-threejs-model-container"
              data-model="{{ asset('public/newportfolio/hero_models/' . $project->hero_model) }}">
+             <div class="left-bar"></div>
             <div id="zoom-hint" style="display: none;">
-                <svg class="mouse-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="new-mouse-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="6" y="3" width="12" height="18" rx="6" stroke="currentColor" stroke-width="2"/>
-                    <circle class="scroll-wheel" cx="12" cy="9" r="2" fill="currentColor"/>
+                    <circle class="new-scroll-wheel" cx="12" cy="9" r="2" fill="currentColor"/>
                 </svg>
-                <span class="hint-text">Click to Zoom</span>
+                <span class="new-hint-text">Click to Zoom</span>
             </div>
         </div>
     @endif
@@ -40,21 +41,21 @@
 
 {{-- ================= FULL WIDTH BANNER ================= --}}
 @if($project->banner_image)
-<section class="full-width-banner">
+<section class="new-full-width-banner">
     <img src="{{ asset('public/newportfolio/banners/' . $project->banner_image) }}" alt="{{ $project->name }}">
 </section>
 @endif
 
 {{-- ================= OVERVIEW / INDUSTRY / SERVICES / CHALLENGES-APPROACH ================= --}}
-<section class="project-details-section">
-    <div class="container">
-        <div class="details-row top-row">
-            <div class="overview-col">
+<section class="new-project-details-section">
+    <div class="new-container">
+        <div class="new-details-row new-top-row">
+            <div class="new-overview-col">
                 <h3>OVERVIEW</h3>
                 <p>{!! $project->overview_description !!}</p>
             </div>
             @if($industryNames->count())
-            <div class="industry-col">
+            <div class="new-industry-col">
                 <h3>INDUSTRY</h3>
                 <p>{!! $industryNames->implode('<br>') !!}</p>
             </div>
@@ -62,25 +63,25 @@
         </div>
 
         @if($servicesList && count($servicesList))
-        <div class="details-row services-row">
+        <div class="new-details-row new-services-row">
             <h3>SERVICES</h3>
-            <div class="services-tags">
+            <div class="new-services-tags">
                 @foreach($servicesList as $service)
-                    <span class="tag">{{ $service }}</span>
+                    <span class="new-tag">{{ $service }}</span>
                 @endforeach
             </div>
         </div>
         @endif
 
-        <div class="details-row bottom-row">
+        <div class="new-details-row new-bottom-row">
             @if($project->challenge_description)
-            <div class="challenges-col">
+            <div class="new-challenges-col">
                 <h3>CHALLENGES</h3>
                 {!! $project->challenge_description !!}
             </div>
             @endif
             @if($project->approach_description)
-            <div class="approach-col">
+            <div class="new-approach-col">
                 <h3>APPROACH</h3>
                 {!! $project->approach_description !!}
             </div>
@@ -91,10 +92,10 @@
 
 {{-- ================= GALLERY ================= --}}
 @if($project->gallery_heading || $project->gallery_description || $galleryGroups->count())
-<section class="golden-harbour-section">
-    <div class="container">
+<section class="new-golden-harbour-section">
+    <div class="new-container">
         @if($project->gallery_heading || $project->gallery_description)
-        <div class="brand-text-header">
+        <div class="new-brand-text-header">
             @if($project->gallery_heading)<h2>{!! nl2br(e($project->gallery_heading)) !!}</h2>@endif
             @if($project->gallery_description){!! $project->gallery_description !!}@endif
         </div>
@@ -105,9 +106,9 @@
             @php $firstGroup = $galleryGroups[0]; @endphp
             @foreach($firstGroup as $item)
                 @if(in_array($item->media_type, ['image', 'gif']))
-                    <img src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" alt="{{ $project->name }}" class="brand-grid-image">
+                    <img src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" alt="{{ $project->name }}" class="new-brand-grid-image">
                 @elseif($item->media_type === 'video')
-                    <video src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" class="brand-grid-image" controls></video>
+                    <video src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" class="new-brand-grid-image" controls></video>
                 @endif
             @endforeach
         @endif
@@ -123,19 +124,19 @@
             $has3dModel = $group->contains(fn($item) => in_array($item->media_type, ['glb', 'gltf']));
         @endphp
 
-        <section class="products-showcase-section mt_100">
-            <div class="container">
+        <section class="new-products-showcase-section new-mt_100">
+            <div class="new-container">
                 @if($groupTitle)
-                    <h2 class="section-heading">{{ $groupTitle }}</h2>
+                    <h2 class="new-section-heading">{{ $groupTitle }}</h2>
                 @endif
 
                 @if($has3dModel)
                     {{-- 3D model group: render each model in its own viewer, grid style like Product Series 01 --}}
-                    <div class="products-grid">
+                    <div class="new-products-grid">
                         @foreach($group as $item)
                             @if(in_array($item->media_type, ['glb', 'gltf']))
-                                <div class="product-card">
-                                    <div class="threejs-model-container" data-model="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}"></div>
+                                <div class="new-product-card">
+                                    <div class="new-threejs-model-container" data-model="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}"></div>
                                 </div>
                             @endif
                         @endforeach
@@ -144,9 +145,9 @@
                     {{-- Image/video group: full-width showcase image(s), same style as Product Series 02-05 --}}
                     @foreach($group as $item)
                         @if(in_array($item->media_type, ['image', 'gif']))
-                            <img src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" alt="{{ $groupTitle ?? $project->name }}" class="products-showcase-image">
+                            <img src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" alt="{{ $groupTitle ?? $project->name }}" class="new-products-showcase-image">
                         @elseif($item->media_type === 'video')
-                            <video src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" class="products-showcase-image" controls></video>
+                            <video src="{{ asset('public/newportfolio/media/' . $item->media_type . '/' . $item->file_path) }}" class="new-products-showcase-image" controls></video>
                         @endif
                     @endforeach
                 @endif

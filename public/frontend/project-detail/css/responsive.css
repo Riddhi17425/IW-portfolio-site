@@ -4,29 +4,29 @@
    Ultra Large Screens (< 1600px)
    ========================================================================== */
 @media (max-width: 1600px) {
-    .hero h1 {
+    .new-hero h1 {
         font-size: 130px;
         /* Scale down so it doesn't get hidden behind 3D model */
     }
 
-    .container {
+    .new-container {
         max-width: 1350px;
     }
 
-    .project-details-section,
-    .golden-harbour-section {
+    .new-project-details-section,
+    .new-golden-harbour-section {
         padding: 80px 0;
     }
 
-    .brand-text-header h2 {
+    .new-brand-text-header h2 {
         font-size: 74px;
     }
 
-    .brand-text-header {
+    .new-brand-text-header {
         margin-bottom: 44px;
     }
 
-    .mt_100 {
+    .new-mt_100 {
         margin-top: 80px;
     }
 }
@@ -35,33 +35,33 @@
    Extra Large Screens (< 1400px)
    ========================================================================== */
 @media (max-width: 1441px) {
-    .hero h1 {
+    .new-hero h1 {
         font-size: 115px;
     }
 
-    .hero p {
+    .new-hero p {
         font-size: 22px;
     }
 
-    .brand-text-header h2 {
+    .new-brand-text-header h2 {
         font-size: 75px;
     }
 
-    .container {
+    .new-container {
         max-width: 1270px;
     }
 
-    .project-details-section,
-    .golden-harbour-section {
+    .new-project-details-section,
+    .new-golden-harbour-section {
         padding: 60px 0;
     }
 
-    .section-heading {
+    .new-section-heading {
         font-size: 32px;
         margin: 0 0 20px 0;
     }
 
-    .mt_100 {
+    .new-mt_100 {
         margin-top: 60px;
     }
 }
@@ -70,23 +70,23 @@
    Desktop / Laptop (< 1200px)
    ========================================================================== */
 @media (max-width: 1281px) {
-    .hero h1 {
+    .new-hero h1 {
         font-size: 100px;
     }
 
-    .hero p {
+    .new-hero p {
         font-size: 20px;
     }
 
-    .brand-text-header h2 {
+    .new-brand-text-header h2 {
         font-size: 64px;
     }
 
-    .section-heading {
+    .new-section-heading {
         font-size: 34px;
     }
 
-    .container {
+    .new-container {
         max-width: 1180px;
     }
 }
@@ -95,45 +95,46 @@
    Tablet (< 992px)
    ========================================================================== */
 @media (max-width: 992px) {
+
     /* Layout Adjustments */
-    .top-row,
-    .bottom-row {
+    .new-top-row,
+    .new-bottom-row {
         flex-direction: column;
         gap: 20px;
     }
 
-    .overview-col,
-    .industry-col,
-    .challenges-col,
-    .approach-col {
+    .new-overview-col,
+    .new-industry-col,
+    .new-challenges-col,
+    .new-approach-col {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    .brand-text-header {
+    .new-brand-text-header {
         flex-direction: column;
         gap: 20px;
     }
 
-    .brand-text-header h2,
-    .brand-text-header p {
+    .new-brand-text-header h2,
+    .new-brand-text-header p {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
     /* Hero Section Stacking (Option A) */
-    .hero {
+    .new-hero {
         flex-direction: column;
         align-items: flex-start;
         /* height: auto; */
         padding-top: 36px;
     }
 
-    .hero-bg-line {
+    .new-hero-bg-line {
         top: 200px;
     }
 
-    .hero-content {
+    .new-hero-content {
         max-width: 100%;
         margin-bottom: 20px;
         position: relative;
@@ -149,7 +150,7 @@
     }
 
     /* Spacing Adjustments */
-    .mt_100 {
+    .new-mt_100 {
         margin-top: 60px;
     }
 }
@@ -158,26 +159,27 @@
    Large Mobile (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* Typography Scaling */
-    .hero h1 {
+    .new-hero h1 {
         font-size: 70px;
         margin-bottom: 15px;
     }
 
-    .hero p {
+    .new-hero p {
         font-size: 20px;
     }
 
-    .brand-text-header h2 {
+    .new-brand-text-header h2 {
         font-size: 50px;
     }
 
-    .section-heading {
+    .new-section-heading {
         font-size: 28px;
     }
 
     /* Spacing */
-    .container {
+    .new-container {
         padding: 0 20px;
     }
 
@@ -188,7 +190,7 @@
         font-size: 11px;
     }
 
-    .products-grid {
+    .new-products-grid {
         grid-template-columns: repeat(1, 1fr);
     }
 }
@@ -197,41 +199,82 @@
    Small Mobile (< 576px)
    ========================================================================== */
 @media (max-width: 576px) {
+
     /* Typography Scaling */
-    .hero h1 {
+    .new-hero h1 {
         font-size: 50px;
     }
 
-    .hero p {
+    .new-hero p {
         font-size: 16px;
     }
 
-    .brand-text-header h2 {
+    .new-brand-text-header h2 {
         font-size: 36px;
     }
 
-    .section-heading {
+    .new-section-heading {
         font-size: 24px;
         margin-bottom: 12px;
     }
 
     /* Spacing Adjustments */
-    .mt_100 {
+    .new-mt_100 {
         margin-top: 40px;
     }
 
-    .services-tags .tag {
+    .new-services-tags .new-tag {
         font-size: 13px;
         padding: 8px 16px;
     }
 
-    .project-details-section p,
-    .project-details-section li {
+    .new-project-details-section p,
+    .new-project-details-section li {
         font-size: 14px;
         line-height: 1.6;
     }
 
-    .project-details-section h3 {
+    .new-project-details-section h3 {
         margin: 0 0 8px 0;
     }
+
+
+    .new-threejs-model-container {
+        position: relative;
+    }
+
+
+    .new-threejs-model-container::after {
+        content: '';
+        position: absolute;
+        background-color: transparent;
+        height: 80px;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    .new-threejs-model-container::before {
+        content: '';
+        position: absolute;
+        background-color: transparent;
+        height: 100%;
+        width: 80px;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    .left-bar {
+        content: '';
+        position: absolute;
+        background-color: transparent;
+        height: 100%;
+        width: 80px;
+        left: 0;
+        top: 0;
+        z-index: 2;
+    }
+
 }
