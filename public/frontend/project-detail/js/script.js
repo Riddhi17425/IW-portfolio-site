@@ -194,8 +194,31 @@ function initModelViewer(container) {
 
 // --- Bootstrap the Application ---
 // Find all elements meant to contain 3D models and initialize them dynamically.
-function initAllViewers() {
+// function initAllViewers() {
+//     const containers = document.querySelectorAll(".new-threejs-model-container");
+//     containers.forEach((container) => {
+//         initModelViewer(container);
+//     });
+// }
+
+function initAllViewers()
+{
     const containers = document.querySelectorAll(".new-threejs-model-container");
+
+    // NO 3D MODELS ON THIS PAGE
+    if (containers.length === 0) 
+    {
+        if (loadingScreen) 
+        {
+            loadingScreen.style.opacity = "0";
+
+            setTimeout(() => {
+                loadingScreen.style.display = "none";
+            }, 500);
+        }
+        return;
+    }
+
     containers.forEach((container) => {
         initModelViewer(container);
     });

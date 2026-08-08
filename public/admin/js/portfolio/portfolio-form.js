@@ -85,8 +85,8 @@ $(document).ready(function () {
         $("#bannerImagePreview").attr("src", url);
         $("#bannerImagePreviewWrap").show();
     });
-
-    /* ---------- Listing image preview ---------- */
+    
+       /* ---------- Listing image preview ---------- */
     $("#listingImageInput").on("change", function () {
         const file = this.files[0];
         if (!file) return;
