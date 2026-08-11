@@ -88,6 +88,13 @@ body {
     text-transform: uppercase;
 }
 
+.new-container h3{
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 30px 0;
+}
+
 /* Canvas container placed on the right half */
 #canvas-container {
     position: absolute;

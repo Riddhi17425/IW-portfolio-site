@@ -101,6 +101,17 @@
         </div>
         @endif
 
+        {{-- Gallery Media Title --}}
+        @if($galleryGroups->count() > 0)
+            @php
+                $firstGroupTitle = $galleryGroups[0]->first()->title ?? null;
+            @endphp
+
+            @if($firstGroupTitle)
+                <h3>{{ $firstGroupTitle }}</h3>
+            @endif
+        @endif
+
         {{-- First gallery group: shown with no title, images only, matching "Brand Experience Grid" style --}}
         @if($galleryGroups->count() > 0)
             @php $firstGroup = $galleryGroups[0]; @endphp
