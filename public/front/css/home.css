@@ -1,0 +1,274 @@
+.hero {
+    margin-top: 100px;
+}
+
+.hero_para {
+    color: var(--444-grey);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+
+/* Select-pill filter controls (pills with dropdown options) */
+
+.filter .filter_top {
+    margin: 80px 0;
+}
+
+.select-group {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.select-pill {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--ddd-grey);
+    background: var(--white);
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    user-select: none;
+    width: 300px;
+
+}
+
+.select-pill .select-label {
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--444-grey);
+}
+
+.select-pill .chev {
+    transition: transform .28s ease;
+}
+
+.select-pill:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(40, 38, 99, 0.06);
+}
+
+.select-pill.open {
+    background: linear-gradient(180deg, #fff, #fbfbff);
+    border-color: rgba(40, 38, 99, 0.08);
+    z-index:2;
+}
+
+.select-pill.open .chev {
+    transform: rotate(180deg);
+}
+
+.select-options {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 12px);
+    width: max-content;
+    width: 300px;
+    height:300px;
+    overflow: auto;
+    background: var(--white);
+    border: 1px solid var(--ddd-grey);
+    border-radius: 12px;
+    padding: 8px 0;
+    z-index: 40;
+    opacity: 0;
+    transform-origin: top center;
+    transform: translateY(-6px) scale(.98);
+    transition: all .18s ease;
+    pointer-events: none;
+}
+
+.select-options[hidden] {
+    display: none;
+}
+
+.select-pill.open .select-options {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.select-options li {
+    list-style: none;
+    color: var(--666-grey);
+}
+
+.select-options li label
+{
+      padding: 10px 16px;
+    cursor: pointer;
+    display:block
+}
+
+.select-options li:hover,
+.select-options li:focus {
+    background: #F6F6FB;
+    outline: none;
+    color: var(--282-blue);
+}
+
+/* Responsive: stack pills on small screens */
+@media (max-width: 480px) {
+    .select-group {
+        width: 100%;
+        gap: 12px;
+        display: block;
+    }
+
+    .select-pill {
+        width: 100%;
+        justify-content: space-between;
+        padding: 12px 16px;
+    }
+
+    .select-options {
+       width: 100%;
+        left: 0;
+        right: 0;
+    }
+}
+
+
+/* ----  home_card  ----- */
+
+.home_card_main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.home_card .content_card {
+    margin-top: 30px;
+}
+
+.home_card .content_card .title_24 {
+    margin-bottom: 20px;
+}
+
+.home_card_img {
+    position: relative;
+    overflow: hidden; /* clip zoomed images */
+    border-radius: 20px;
+}
+
+.home_card_img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 4s cubic-bezier(.16,1,.3,1), filter 4s ease;
+    will-change: transform;
+    transform-origin: center center;
+}
+
+.home_card:hover .home_card_img img,
+.home_card:focus-within .home_card_img img {
+    transform: scale(1.02) translateY(-4px);
+}
+
+/* Custom thumb cursor (appears over .home_card) */
+.thumb-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(10,16,28,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(.9);
+  transition: transform .16s ease, opacity .12s ease, filter .12s ease;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+}
+.thumb-cursor svg { width: 22px; height: 22px; display: block; }
+.thumb-cursor.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* hide native cursor when custom cursor active on card */
+.no-native-cursor { cursor: none !important; }
+
+/* small variation when pressed */
+.thumb-cursor.pressed { transform: translate(-50%, -50%) scale(.92) rotate(-6deg); filter: brightness(.98); }
+
+/* don't enable on coarse pointers (touch) */
+@media (hover: none) and (pointer: coarse) {
+  .thumb-cursor { display: none !important; }
+  .no-native-cursor { cursor: auto !important; }
+}
+
+.btn_card {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--282-blue);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    border-radius: 49px;
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(8.199999809265137px);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+
+/*=======================*/
+
+
+/* Wrapper */
+.custom-tabs {
+    margin-top: 26px;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 10px;
+}
+
+/* Buttons */
+.custom-tabs .nav-link {
+    border: none;
+    transition: 0.3s;
+    border-radius: 39px;
+    background: rgba(40, 38, 99, 0.10);
+    color:var(--black);
+    padding: 10px 30px;
+   
+}
+
+/* Active Tab */
+.custom-tabs .nav-link.active {
+    background: var(--282-blue);
+    color: var(--white);
+}
+
+
+.card_btn {
+   display: inline-flex;
+height: 36px;
+padding: 5px 15px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+  
+  
+    border-radius: 20px;
+   background: #8EBF1F;
+   color:var(--white);
+}
+
+.content_card_head
+{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:20px;
+}

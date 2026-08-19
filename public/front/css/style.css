@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --666-grey: #666666;
+  --333-grey: #333;
+  --999-grey: #999999;
+  --ddd-grey: #DDDDDD;
+  --444-grey: #444444;
+  --282-blue: #282663;
+  --9d9-blue: #9D9CC2;
+  --c52-red: #C52030;
+  --black: #0A101C;
+  --poppins-font: 'Poppins', sans-serif;
+}
+
+
+body {
+  font-family: var(--poppins-font);
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--444-grey);
+}
+
+
+/* Make images responsive by default */
+/* img,
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+/* common class */
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.container {
+  max-width: calc(100% - 60px);
+}
+
+.title_90 {
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 90px;
+}
+
+.title_72 {
+  color: var(--282-blue);
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 90px;
+}
+
+.title_24 {
+  color: var(--282-blue);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.title_30 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+
+.title_40 {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+.light_18 {
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 0px;
+}
+
+.bold_18 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.portfolio-text .title_30,
+.portfolio-text .title_90 {
+  color: var(--282-blue);
+}
+
+.title-highlight {
+  color: var(--9d9-blue);
+}
+
+/* common class */
+
+
+.thank_you
+{
+    color:var(--white);
+    background:#292663;
+    padding-top:50px;
+}
+
+.thank_you .head_btn
+{
+    border-color:var(--white);
+    color:var(--white);
+}
